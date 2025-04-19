@@ -79,8 +79,8 @@ class AuthViewSet(ViewSet):
 
 class CategoryViewSet(GenericViewSet, ListModelMixin, CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin):
     permission_classes = [IsAuthenticated]
-    serializer_class = CategorySerializer  # Serializer aniq belgilandi
-    queryset = Category.objects.all()  # Queryset aniq belgilandi
+    serializer_class = CategorySerializer
+    queryset = Category.objects.all()
 
     def get_queryset(self):
         query = self.request.query_params.get('search', '')
@@ -130,8 +130,8 @@ class CategoryViewSet(GenericViewSet, ListModelMixin, CreateModelMixin, Retrieve
 
 class TaskViewSet(GenericViewSet, ListModelMixin, CreateModelMixin):
     permission_classes = [IsAuthenticated]
-    serializer_class = TaskSerializer  # Serializer aniq belgilandi
-    queryset = Task.objects.all()  # Queryset aniq belgilandi
+    serializer_class = TaskSerializer
+    queryset = Task.objects.all()
 
     def get_queryset(self):
         query = self.request.query_params.get('search', '')
